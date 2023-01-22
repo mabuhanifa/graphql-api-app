@@ -9,7 +9,18 @@ const graphql = require("graphql");
 const { GraphQLSchema, GraphQLObjectType, GraphQLInt, GraphQLString } = graphql;
 const { graphqlHTTP } = require("express-graphql");
 
-const RootQuery = "query";
+const UserType = new GraphQLObjectType({
+  name: "user",
+  fields: () => ({
+    id: 1,
+  }),
+});
+
+const RootQuery = new GraphQLObjectType({
+  name: "rootQueryType",
+  fields: {},
+});
+
 const Mutation = "mutation";
 
 const schema = new GraphQLSchema({
