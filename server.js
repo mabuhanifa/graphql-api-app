@@ -6,6 +6,7 @@ app.use(express.json());
 app.use(cors());
 const data = require("./mock.json");
 const graphql = require("graphql");
+const { GraphQLSchema, GraphQLObjectType, GraphQLInt, GraphQLString } = graphql;
 const { graphqlHTTP } = require("express-graphql");
 
 const RootQuery = "query";
