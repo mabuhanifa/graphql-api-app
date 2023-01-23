@@ -4,21 +4,8 @@ const cors = require("cors");
 const port = 5000;
 app.use(express.json());
 app.use(cors());
-const userData = require("./mock.json");
-const graphql = require("graphql");
-
-const {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLInt,
-  GraphQLString,
-  GraphQLList,
-} = graphql;
 const { graphqlHTTP } = require("express-graphql");
-
-
-
-
+const schema = require("./Schemas/index");
 app.use(
   "/graphql",
   graphqlHTTP({

@@ -1,6 +1,6 @@
 const graphql = require("graphql");
 const UserType = require("./TypeDefs/UserType");
-const userData = require("./mock.json");
+const userData = require("../mock.json");
 
 const {
   GraphQLSchema,
