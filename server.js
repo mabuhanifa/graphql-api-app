@@ -51,10 +51,16 @@ const Mutation = new GraphQLObjectType({
         email: { type: GraphQLString },
         password: { type: GraphQLString },
       },
+
       resolve(parent, args) {
         userData.push({
           id: userData.length + 1,
+          firstName: args.firstName,
+          lastName: args.lastName,
+          email: args.email,
+          password: args.password,
         });
+        return args;
       },
     },
   },
