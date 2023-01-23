@@ -28,11 +28,11 @@ const UserType = new GraphQLObjectType({
 });
 
 const RootQuery = new GraphQLObjectType({
-  name: "rootQueryType",
+  name: "RootQueryType",
   fields: {
     getAllUsers: {
-      type: GraphQLList(UserType),
-      args: { id: GraphQLInt },
+      type: new GraphQLList(UserType),
+      args: { id: { type: GraphQLInt } },
       resolve(parent, args) {
         return userData;
       },
